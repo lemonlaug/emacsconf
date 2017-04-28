@@ -4,6 +4,7 @@
 (if window-system
      (scroll-bar-mode -1))
 (setq mac-option-key-is-meta 1)
+(setq vc-follow-symlinks t)
 
 ;Show column.
 (setq column-number-mode t)
@@ -57,7 +58,6 @@
 ;; BASIC CUSTOMIZATION
 ;; --------------------------------------
 (load-theme 'material t) ;; load material theme
-
 
 ;;Elpy
 (elpy-enable)
