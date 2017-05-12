@@ -30,7 +30,6 @@
     find-file-in-project
     highlight-indentation
     ivy
-    keywiz
     magit
     git-commit
     magit-popup
