@@ -66,3 +66,19 @@
 
 ;;m magit
 (global-set-key (kbd "C-x g") 'magit-status)
+
+;; make backup to a designated dir, mirroring the full path
+
+(defun my-backup-file-name (fpath)
+  "Return a new file path of a given file path.
+If the new path's directories does not exist, create them."
+  (let* (
+        (backupRootDir "~/.emacs.d/emacs-backup/")
+        (backupFilePath (replace-regexp-in-string "//" "/" (concat backupRootDir fpath "~") ))
+        )
+    (make-directory (file-name-directory backupFilePath) (file-name-directory backupFilePath))
+    backupFilePath
+  )
+)
+
+(setq make-backup-file-name-function 'my-backup-file-name)
