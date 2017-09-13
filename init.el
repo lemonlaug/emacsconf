@@ -47,6 +47,7 @@
     yaml-mode
     yasnippet
     better-shell
+    julia-mode
 ))
 
 (mapc #'(lambda (package)
@@ -82,3 +83,7 @@ If the new path's directories does not exist, create them."
 )
 
 (setq make-backup-file-name-function 'my-backup-file-name)
+
+;;org-mode stuff...
+(global-set-key "\C-ca" 'org-agenda)
+(setq org-startup-indented 1)
