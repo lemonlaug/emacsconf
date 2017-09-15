@@ -47,6 +47,7 @@
     yaml-mode
     yasnippet
     better-shell
+    julia-mode
 ))
 
 (mapc #'(lambda (package)
@@ -83,4 +84,16 @@ If the new path's directories does not exist, create them."
 
 (setq make-backup-file-name-function 'my-backup-file-name)
 (setq latex-run-command "xelatex")
+
+;;;;;;;
+;;org-mode stuff...
+;;;;;;;
+(global-set-key "\C-ca" 'org-agenda)
+(setq org-startup-indented 1)
+(setq org-return-follows-link 1)
+(setq org-directory "~/notes")
+(setq org-agenda-files (list org-directory))
+
+(setq org-default-notes-file (concat org-directory "/notes.org"))
+(define-key global-map "\C-cc" 'org-capture)
 
