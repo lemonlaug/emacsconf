@@ -82,3 +82,5 @@ If the new path's directories does not exist, create them."
 )
 
 (setq make-backup-file-name-function 'my-backup-file-name)
+(setq latex-run-command "xelatex")
+
