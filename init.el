@@ -61,7 +61,7 @@
 
 ;;Elpy
 (elpy-enable)
-(elpy-use-ipython)
+;;(elpy-use-ipython)
 (pyenv-mode)
 (setq python-shell-interpreter-args "--simple-prompt --pprint")
 
@@ -96,4 +96,3 @@ If the new path's directories does not exist, create them."
 
 (setq org-default-notes-file (concat org-directory "/notes.org"))
 (define-key global-map "\C-cc" 'org-capture)
-
