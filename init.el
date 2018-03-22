@@ -61,7 +61,7 @@
 
 ;;Elpy
 (elpy-enable)
-(elpy-use-ipython)
+;;(elpy-use-ipython)
 (pyenv-mode)
 (setq python-shell-interpreter-args "--simple-prompt --pprint")
 
@@ -90,10 +90,8 @@ If the new path's directories does not exist, create them."
 (global-set-key "\C-ca" 'org-agenda)
 (setq org-startup-indented 1)
 (setq org-return-follows-link 1)
-(setq org-directory "~/Sync/notes")
+;;(setq org-directory "~/Sync/notes")
 (setq org-agenda-files (list org-directory))
 (setq org-archive-location "%s_archive::")
-
-(setq org-default-notes-file (concat org-directory "/notes.org"))
+(setq org-default-notes-file (concat org-directory "notes.org"))
 (define-key global-map "\C-cc" 'org-capture)
-
