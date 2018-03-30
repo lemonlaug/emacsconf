@@ -98,10 +98,8 @@ If the new path's directories does not exist, create them."
 (setq org-default-notes-file (concat org-directory "notes.org"))
 (define-key global-map "\C-cc" 'org-capture)
 
+
 ;; Rmd files edit as Markdown!
-(defun rmd-mode ()
-  "ESS Markdown mode for rmd files"
-  (interactive)
-  (require 'poly-R)
-  (require 'poly-markdown)
-  (poly-markdown+r-mode))
+(require 'poly-R)
+(require 'poly-markdown)
+(add-to-list 'auto-mode-alist '("\\.Rmd" . poly-markdown+r-mode))
