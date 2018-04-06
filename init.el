@@ -60,6 +60,8 @@
 ;; BASIC CUSTOMIZATION
 ;; --------------------------------------
 (load-theme 'material t) ;; load material theme
+(setq-default indent-tabs-mode nil)
+
 
 ;;Elpy
 (elpy-enable)
@@ -97,7 +99,7 @@ If the new path's directories does not exist, create them."
 (setq org-archive-location "%s_archive::")
 (setq org-default-notes-file (concat org-directory "notes.org"))
 (define-key global-map "\C-cc" 'org-capture)
-
+(setq org-log-done 'time)
 
 ;; Rmd files edit as Markdown!
 (require 'poly-R)
