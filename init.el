@@ -101,6 +101,16 @@ If the new path's directories does not exist, create them."
 (define-key global-map "\C-cc" 'org-capture)
 (setq org-log-done 'time)
 
+(add-to-list 'org-agenda-custom-commands
+             '("W" "Weekly review"
+               agenda ""
+               ((org-agenda-start-day "-7d")
+                (org-agenda-start-on-weekday 0)
+                (org-agenda-start-with-log-mode t)
+                (org-agenda-skip-function
+                 '(org-agenda-skip-entry-if 'nottodo 'done))
+                 )))
+
 ;; Rmd files edit as Markdown!
 (require 'poly-R)
 (require 'poly-markdown)
