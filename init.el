@@ -50,6 +50,7 @@
     better-shell
     julia-mode
     polymode
+    flycheck
 ))
 
 (mapc #'(lambda (package)
@@ -101,7 +102,7 @@ If the new path's directories does not exist, create them."
 (define-key global-map "\C-cc" 'org-capture)
 (setq org-log-done 'time)
 
-(add-to-list 'org-agenda-custom-commands
+(setq org-agenda-custom-commands
              '("W" "Weekly review"
                agenda ""
                ((org-agenda-start-day "-7d")
