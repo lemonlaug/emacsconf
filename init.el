@@ -1,3 +1,8 @@
+;;; startup -- summary
+;;; Commentary:
+;;; Just an init.
+
+;;; Code:
 ;;No scrolling no tool-bar.
 (if window-system
     (tool-bar-mode 0))
@@ -24,7 +29,7 @@
 ;;
 (setq custom-file "~/.emacs.d/custom.el")
 
-(defvar myPackages
+(defvar packages-my-packages
   '(elpy
     ess
     company
@@ -56,7 +61,7 @@
 (mapc #'(lambda (package)
     (unless (package-installed-p package)
       (package-install package)))
-      myPackages)
+      packages-my-packages)
 
 ;; BASIC CUSTOMIZATION
 ;; --------------------------------------
@@ -98,19 +103,19 @@ If the new path's directories does not exist, create them."
 ;;(setq org-directory "~/Sync/notes")
 (setq org-agenda-files (list org-directory))
 (setq org-archive-location "%s_archive::")
-(setq org-default-notes-file (concat org-directory "notes.org"))
+(setq org-default-notes-file (concat org-directory "/notes.org"))
 (define-key global-map "\C-cc" 'org-capture)
 (setq org-log-done 'time)
 
-(setq org-agenda-custom-commands
-             '("W" "Weekly review"
-               agenda ""
-               ((org-agenda-start-day "-7d")
-                (org-agenda-start-on-weekday 0)
-                (org-agenda-start-with-log-mode t)
-                (org-agenda-skip-function
-                 '(org-agenda-skip-entry-if 'nottodo 'done))
-                 )))
+;; (setq org-agenda-custom-commands
+;;       '("W" "Weekly review"
+;;         agenda ""
+;;         ((org-agenda-start-day "-7d")
+;;          (org-agenda-start-on-weekday 0)
+;;          (org-agenda-start-with-log-mode t)
+;;          (org-agenda-skip-function
+;;           '(org-agenda-skip-entry-if 'nottodo 'done))
+;;          )))
 
 ;; Rmd files edit as Markdown!
 (require 'poly-R)
