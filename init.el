@@ -68,7 +68,7 @@
 (elpy-enable)
 ;;(elpy-use-ipython)
 (pyenv-mode)
-(setq python-shell-interpreter-args "--simple-prompt --pprint")
+;;(setq python-shell-interpreter-args "--simple-prompt --pprint")
 
 ;;m magit
 (global-set-key (kbd "C-x g") 'magit-status)
