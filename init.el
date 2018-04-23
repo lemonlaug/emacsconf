@@ -89,7 +89,7 @@ If the new path's directories does not exist, create them."
         )
     (make-directory (file-name-directory backupFilePath) (file-name-directory backupFilePath))
     backupFilePath
-  )
+  )W
 )
 
 (setq make-backup-file-name-function 'my-backup-file-name)
@@ -107,15 +107,10 @@ If the new path's directories does not exist, create them."
 (define-key global-map "\C-cc" 'org-capture)
 (setq org-log-done 'time)
 
-;; (setq org-agenda-custom-commands
-;;       '("W" "Weekly review"
-;;         agenda ""
-;;         ((org-agenda-start-day "-7d")
-;;          (org-agenda-start-on-weekday 0)
-;;          (org-agenda-start-with-log-mode t)
-;;          (org-agenda-skip-function
-;;           '(org-agenda-skip-entry-if 'nottodo 'done))
-;;          )))
+(setq org-agenda-custom-commands
+      '(("S" "Last week's snippet" tags
+         "CLOSED>=\"<-1w>\""
+         ((org-agenda-overriding-header "Last week's completed TODOs")))))
 
 ;; Rmd files edit as Markdown!
 (require 'poly-R)
