@@ -5,9 +5,9 @@
 ;;; Code:
 ;;No scrolling no tool-bar.
 (if window-system
-    (tool-bar-mode 0))
-(if window-system
-     (scroll-bar-mode -1))
+    (tool-bar-mode -1)
+    (scroll-bar-mode -1))
+
 (setq mac-option-key-is-meta 1)
 (setq vc-follow-symlinks t)
 
@@ -81,15 +81,16 @@
 ;; make backup to a designated dir, mirroring the full path
 
 (defun my-backup-file-name (fpath)
-  "Return a new file path of a given file path.
-If the new path's directories does not exist, create them."
+"Return a new file path of a given file path.
+FPATH is a path
+ If the new path's directories does not exist, create them."
   (let* (
         (backupRootDir "~/.emacs.d/emacs-backup/")
         (backupFilePath (replace-regexp-in-string "//" "/" (concat backupRootDir fpath "~") ))
         )
     (make-directory (file-name-directory backupFilePath) (file-name-directory backupFilePath))
     backupFilePath
-  )W
+  )
 )
 
 (setq make-backup-file-name-function 'my-backup-file-name)
@@ -116,3 +117,5 @@ If the new path's directories does not exist, create them."
 (require 'poly-R)
 (require 'poly-markdown)
 (add-to-list 'auto-mode-alist '("\\.Rmd" . poly-markdown+r-mode))
+
+;;; init.el ends here
