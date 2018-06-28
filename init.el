@@ -14,6 +14,7 @@
 ;Show column.
 (setq column-number-mode t)
 
+
 ;;Packages
 (require 'package)
 ;;(require 'melpa)
@@ -118,4 +119,8 @@ FPATH is a path
 (require 'poly-markdown)
 (add-to-list 'auto-mode-alist '("\\.Rmd" . poly-markdown+r-mode))
 
-;;; init.el ends here
+
+;; ediff customization
+(setq ediff-window-setup-function 'ediff-setup-windows-plain)
+
+;;; Inite.el ends here
