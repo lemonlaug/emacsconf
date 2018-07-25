@@ -123,4 +123,9 @@ FPATH is a path
 ;; ediff customization
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)
 
-;;; Inite.el ends here
+;; Set up how to open links
+(setq browse-url-browser-function 'browse-url-generic
+      browse-url-generic-program  "google-chrome")
+(define-key global-map "\C-c\C-v" 'browse-url-at-point)
+
+;;; Init.el ends here
