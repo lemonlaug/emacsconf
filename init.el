@@ -12,8 +12,8 @@
 ;;Packages
 (require 'package)
 ;;(require 'melpa)
-(add-to-list 'package-archives
-             '("melpa-stable" . "https://stable.melpa.org/packages/"))
+;;(add-to-list 'package-archives
+;;             '("melpa-stable" . "https://stable.melpa.org/packages/"))
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/") t)
 
@@ -23,6 +23,7 @@
 
 ;;
 (setq custom-file "~/.emacs.d/custom.el")
+(load custom-file)
 
 (defvar myPackages
   '(elpy
@@ -48,6 +49,7 @@
     yasnippet
     better-shell
     julia-mode
+    ledger-mode
 ))
 
 (mapc #'(lambda (package)
@@ -61,9 +63,8 @@
 
 ;;Elpy
 (elpy-enable)
-(elpy-use-ipython)
+;;(elpy-use-ipython)
 (pyenv-mode)
-(setq python-shell-interpreter-args "--simple-prompt --pprint")
 
 ;;m magit
 (global-set-key (kbd "C-x g") 'magit-status)
@@ -97,3 +98,8 @@ If the new path's directories does not exist, create them."
 (setq org-default-notes-file (concat org-directory "/notes.org"))
 (define-key global-map "\C-cc" 'org-capture)
 
+;;;;;;;
+;;ledger-mode stuff...
+;;;;;;;
+(global-set-key "\C-clr" 'ledger-report-select-report)
+(setq ledger-schedule-file "~/ledger/isaac_personal_schedule.ledger")
