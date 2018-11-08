@@ -16,8 +16,8 @@
 ;;Packages
 (require 'package)
 ;;(require 'melpa)
-(add-to-list 'package-archives
-             '("melpa-stable" . "https://stable.melpa.org/packages/"))
+;;(add-to-list 'package-archives
+;;             '("melpa-stable" . "https://stable.melpa.org/packages/"))
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/") t)
 
@@ -27,6 +27,7 @@
 
 ;;
 (setq custom-file "~/.emacs.d/custom.el")
+(load custom-file)
 
 (defvar packages-my-packages
   '(elpy
@@ -53,6 +54,7 @@
     yasnippet
     better-shell
     julia-mode
+    ledger-mode
     polymode
     flycheck
 ))
@@ -72,6 +74,7 @@
 ;;(elpy-use-ipython)
 (pyenv-mode)
 ;;(setq python-shell-interpreter-args "--simple-prompt --pprint")
+
 
 ;;m magit
 (global-set-key (kbd "C-x g") 'magit-status)
@@ -125,4 +128,11 @@ FPATH is a path
       browse-url-generic-program  "google-chrome")
 (define-key global-map "\C-c\C-v" 'browse-url-at-point)
 
+;;;;;;;
+;;ledger-mode stuff...
+;;;;;;;
+(global-set-key "\C-clr" 'ledger-report-select-report)
+(setq ledger-schedule-file "~/ledger/isaac_personal_schedule.ledger")
+
 ;;; Init.el ends here
+
