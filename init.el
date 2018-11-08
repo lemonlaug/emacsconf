@@ -4,16 +4,14 @@
 
 ;;; Code:
 ;;No scrolling no tool-bar.
-(if window-system
-    (tool-bar-mode -1)
-    (scroll-bar-mode -1))
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
 
 (setq mac-option-key-is-meta 1)
 (setq vc-follow-symlinks t)
 
 ;Show column.
 (setq column-number-mode t)
-
 
 ;;Packages
 (require 'package)
@@ -68,7 +66,6 @@
 ;; --------------------------------------
 (load-theme 'material t) ;; load material theme
 (setq-default indent-tabs-mode nil)
-
 
 ;;Elpy
 (elpy-enable)
