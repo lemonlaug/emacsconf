@@ -58,6 +58,8 @@
     julia-mode
     ledger-mode
     polymode
+    poly-R
+    poly-markdown
     flycheck
 ))
 
@@ -106,9 +108,9 @@ FPATH is a path
 (setq org-startup-indented 1)
 (setq org-return-follows-link 1)
 ;;(setq org-directory "~/Sync/notes")
-(setq org-agenda-files (list org-directory))
+;;(setq org-agenda-files (list org-directory))
 (setq org-archive-location "%s_archive::")
-(setq org-default-notes-file (concat org-directory "/notes.org"))
+;;(setq org-default-notes-file (concat org-directory "/notes.org"))
 (define-key global-map "\C-cc" 'org-capture)
 (setq org-log-done 'time)
 
@@ -136,6 +138,6 @@ FPATH is a path
 ;;;;;;;
 (global-set-key "\C-clr" 'ledger-report-select-report)
 (setq ledger-schedule-file "~/ledger/isaac_personal_schedule.ledger")
-
+(define-key global-map "\C-cu" 'ledger-schedule-upcoming)
 ;;; Init.el ends here
 
