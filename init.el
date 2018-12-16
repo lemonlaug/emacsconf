@@ -56,6 +56,8 @@
     julia-mode
     ledger-mode
     polymode
+    poly-R
+    poly-markdown
     flycheck
 ))
 
@@ -70,7 +72,7 @@
 (setq-default indent-tabs-mode nil)
 
 ;;Elpy
-(elpy-enable)
+;;(elpy-enable)
 ;;(elpy-use-ipython)
 (pyenv-mode)
 ;;(setq python-shell-interpreter-args "--simple-prompt --pprint")
@@ -102,7 +104,7 @@ FPATH is a path
 (global-set-key "\C-ca" 'org-agenda)
 (setq org-startup-indented 1)
 (setq org-return-follows-link 1)
-;;(setq org-directory "~/Sync/notes")
+(setq org-directory "~/org/notes")
 (setq org-agenda-files (list org-directory))
 (setq org-archive-location "%s_archive::")
 (setq org-default-notes-file (concat org-directory "/notes.org"))
